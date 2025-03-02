@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  api:
+    image: node:20
+    container_name: easygenerator.api
+    working_dir: /api
+    volumes:
+      - .:/api
+    command: npm run start:dev
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
