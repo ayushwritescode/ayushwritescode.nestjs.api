@@ -101,8 +101,8 @@ export class AuthController {
   @UseGuards(JwtRefreshGuard)
   @Get('init')
   async init(@CurrentUser() user: User, @Res({ passthrough: true }) res: Response) {
-    const newAccessToken = await this.authService.generateAccessToken(user._id, user.email);
 
+    const newAccessToken = await this.authService.generateAccessToken(user._id, user.email);
     const newRefreshToken = await this.authService.generateRefreshToken(user._id, user.email);
     res.cookie('refreshToken', newRefreshToken, {
       httpOnly: true,
@@ -119,9 +119,15 @@ export class AuthController {
   }
 
   @Post('logout')
+  @UseGuards(JwtRefreshGuard)
   @HttpCode(200)
   async logout(@Res({ passthrough: true }) res: Response) {
-    res.clearCookie('refreshToken');
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+      path: '/',
+    });    
     return {
       message: 'Logged out successfully',
     };
