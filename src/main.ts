@@ -10,7 +10,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
   app.enableCors({
-    origin: process.env.CORS_DOMAIN || 'http://localhost:5173',
+    origin: new RegExp(`^https?:\\/\\/${process.env.CORS_DOMAIN}$`),
     credentials: true,
   });
   const config = new DocumentBuilder()
