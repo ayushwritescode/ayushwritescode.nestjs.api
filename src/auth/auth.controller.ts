@@ -126,7 +126,6 @@ export class AuthController {
       httpOnly: true,
       sameSite: 'none',
       secure: true,
-      path: '/',
     });    
     return {
       message: 'Logged out successfully',
