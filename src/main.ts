@@ -10,9 +10,10 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
   app.enableCors({
-    origin: new RegExp(`^https?:\\/\\/${process.env.CORS_DOMAIN}$`),
+    origin: process.env.CORS_ORIGIN,
     credentials: true,
   });
+
   const config = new DocumentBuilder()
     .setTitle('Easy Generator API Documentation')
     .setDescription('Swagger Documentation for Easy Generator APIs')
