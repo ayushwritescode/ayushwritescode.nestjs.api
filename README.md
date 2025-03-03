@@ -37,8 +37,10 @@ This repository contains the **Node.js / NestJS** backend for the EasyGenerator 
 
 8. **Swagger API Documentation**  
    - Integrated using `@nestjs/swagger`
-   - Provides interactive UI at `/api/docs` to test endpoints
+   - Provides interactive UI at `/api` to test endpoints
    - Helps developers explore and understand API usage easily
+     
+![image](https://github.com/user-attachments/assets/19471b36-a2b3-442f-b569-2b8de08e7345)
 
 ---
 
