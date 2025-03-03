@@ -6,7 +6,7 @@ services:
     working_dir: /api
     volumes:
       - .:/api
-    command: npm run start:dev
+    command: npm run start:prod
     ports:
       - '3000:3000'
     depends_on:
