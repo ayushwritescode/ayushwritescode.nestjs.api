@@ -75,24 +75,22 @@ npm install
 yarn install
 ```
 
-### 3. Create a `.env` File
+### 3. Create a `.env` File if does not exist
 
 In the project root:
 
 ```
-JWT_ACCESS_SECRET=some_access_secret
-JWT_REFRESH_SECRET=some_refresh_secret
-JWT_ACCESS_EXPIRES=15m
+PORT=3000
+MONGO_URI=mongodb://mongodb:27017/easygeneratordb
+JWT_ACCESS_EXPIRES=15s
 JWT_REFRESH_EXPIRES=7d
-MONGO_URI=mongodb://localhost:27017/easygenerator
-NODE_ENV=development
-RATE_LIMIT_MAX_REQUESTS=100
-RATE_LIMIT_TIME_WINDOW=15m
+JWT_ACCESS_SECRET=easygeneratorsecret
+JWT_REFRESH_SECRET=easygeneratorrefreshsecret
 ```
 
 Adjust as needed.
 
-### 4. Run Locally (Development)
+### 4. Run Locally [Recommended approach: docker compose up] (Development) [Check Mongo DB connection string if running without docker]
 
 ```bash
 npm run start:dev
@@ -107,7 +105,7 @@ NestJS dev server runs at `http://localhost:3000`.
 Once the server is running, open:
 
 ```
-http://localhost:3000/api/docs
+http://localhost:3000/api
 ```
 
 This interactive documentation allows you to explore available endpoints and test them directly from the UI.
@@ -132,7 +130,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-This spins up MongoDB + Backend together (and potentially the Frontend). The backend will listen on port `3000`.
+This spins up MongoDB + Backend together. The backend will listen on port `3000`.
 
 ---
 
