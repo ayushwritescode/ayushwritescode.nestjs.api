@@ -89,6 +89,7 @@ JWT_REFRESH_SECRET=easygeneratorrefreshsecret
 ```
 
 Adjust as needed.
+** Please modify the cors configuration in main.ts as required.
 
 ### 4. Run Locally [Recommended approach: docker compose up] (Development) [Check Mongo DB connection string if running without docker]
 
