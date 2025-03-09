@@ -1,8 +1,8 @@
-# EasyGenerator Backend 
+# Backend 
 
 (Hosted on Railway with CI/CD : https://easygeneratorapi-production.up.railway.app/api)
 
-This repository contains the **Node.js / NestJS** backend for the EasyGenerator application. It includes:
+This repository contains the **Node.js / NestJS** backend for the application. It includes:
 
 - **JWT Access/Refresh Token Flow** with HTTP-only cookies  
 - **MongoDB** for data persistence  
