@@ -1,6 +1,6 @@
 # Backend 
 
-(Hosted on Railway with CI/CD : https://easygeneratorapi-production.up.railway.app/api)
+(Hosted on Railway with CI/CD : ayushwritescode-login-api.up.railway.app/api)
 
 This repository contains the **Node.js / NestJS** backend for the application. It includes:
 
